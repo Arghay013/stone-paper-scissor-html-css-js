@@ -2,61 +2,92 @@
     margin: 0;
     padding: 0;
     text-align: center;
-}
-
-h1 {
+    box-sizing: border-box; /* Include padding and border in box model */
+  }
+  
+  h1 {
     background-color: #100a3b;
     color: azure;
     height: 5rem;
     line-height: 5rem;
-}
-
-.choices{
+    margin: 0;
+  }
+  
+  .choices {
     display: flex;
+    flex-wrap: wrap; /* Allow choices to wrap to the next line on smaller screens */
     justify-content: center;
     align-items: center;
-    margin: 5rem;
-    gap: 4rem;
-}
-
-.choice {
-    height: 165px;
-    width: 165px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.choice:hover {
-    cursor: pointer;
-    background-color: #100a3b;
-}
-
-img {
+    margin: 2rem; /* Reduced margin for smaller screens */
+    gap: 2rem;
+  }
+  
+  .choice {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-}
-
-.score-board {
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    align-items: center;
+  }
+  
+  .choice:hover {
+    cursor: pointer;
+    background-color: #100a3b;
+  }
+  
+  img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+  }
+  
+  .score-board {
+    display: flex;
+    flex-direction: column; /* Stack scores vertically on smaller screens */
+    gap: 1rem;
     font-size: 2rem;
-}
-
-#user-score, #comp-score {
-    font-size: 5rem;
-}
-
-.msg-container {
+  }
+  
+  #user-score,
+  #comp-score {
+    font-size: 4rem;
+  }
+  
+  .msg-container {
     background-color: #100a3b;
     color: azure;
     display: inline-block;
-    font-size: 2rem;
-    margin-top: 3rem;
-    padding: 1rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
     border-radius: 1rem;
-}
+  }
+  
+  /* Media Query for screens smaller than 600px */
+  @media only screen and (max-width: 600px) {
+    .choices {
+      margin: 1rem; /* Further reduced margin for smaller screens */
+    }
+  
+    .choice {
+      height: 100px;
+      width: 100px;
+    }
+  
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  
+    #user-score,
+    #comp-score {
+      font-size: 3rem;
+    }
+  
+    .msg-container {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+  }
+  
